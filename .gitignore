@@ -3,4 +3,5 @@ domainbed/facebook.py
 
 domainbed/data/*
 train_output/*
-domainbed/deit-main/
+domainbed/scripts/train_output/1/after.png
+domainbed/deit-main
