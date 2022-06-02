@@ -128,10 +128,11 @@ def make_args_list(n_trials, dataset_names, algorithms, n_hparams_from, n_hparam
     return args_list
 
 def ask_for_confirmation():
-    response = input('Are you sure? (y/n) ')
-    if not response.lower().strip()[:1] == "y":
-        print('Nevermind!')
-        exit(0)
+    #response = input('Are you sure? (y/n) ')
+    response = "y"
+    if response.lower().strip()[:1] == "y":
+     print('Good to go')
+    #   exit(0)
 
 DATASETS = [d for d in datasets.DATASETS if "Debug" not in d]
 
@@ -179,6 +180,8 @@ if __name__ == "__main__":
         len([j for j in jobs if j.state == Job.INCOMPLETE]),
         len([j for j in jobs if j.state == Job.NOT_LAUNCHED]))
     )
+    
+    print(jobs[0].command_str)
 
     if args.command == 'launch':
         to_launch = [j for j in jobs if j.state == Job.NOT_LAUNCHED]
